@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Mail, Play, TrendingUp, Users, Globe, Zap } from 'lucide-react';
+import { Mail, Globe, Zap, Smartphone } from 'lucide-react';
 
 export default function DramaXStudios() {
   const [expandedSeries, setExpandedSeries] = useState(null);
@@ -85,23 +85,99 @@ export default function DramaXStudios() {
 
       {/* Approach */}
       <section className="max-w-5xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold mb-6">Our Approach</h2>
+        <h2 className="text-3xl font-bold mb-8">Our Approach</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+            <Zap className="w-8 h-8 text-blue-400 mb-3" />
+            <h3 className="text-xl font-semibold mb-2">AI-Native Production</h3>
+            <p className="text-slate-400 text-sm">
+              Seedance 2.0, Kling 3.0, ElevenLabs. Production-grade tools that deliver 90%+ usable footage
+              without the traditional studio overhead.
+            </p>
+          </div>
+          <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+            <Globe className="w-8 h-8 text-blue-400 mb-3" />
+            <h3 className="text-xl font-semibold mb-2">Spanish-First, LATAM</h3>
+            <p className="text-slate-400 text-sm">
+              176M installations, 6x growth YoY. Spanish-language premium content is undersupplied.
+              We own that market.
+            </p>
+          </div>
+          <div className="bg-slate-800 border border-slate-700 rounded-lg p-6">
+            <Smartphone className="w-8 h-8 text-blue-400 mb-3" />
+            <h3 className="text-xl font-semibold mb-2">Multi-Platform</h3>
+            <p className="text-slate-400 text-sm">
+              Facebook Reels, TikTok Series, YouTube Shorts, Instagram, WhatsApp Business,
+              licensing to ReelShort/DramaBox.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section className="max-w-5xl mx-auto py-16 px-6">
+        <h2 className="text-3xl font-bold mb-8">About DramaX</h2>
+        <div className="grid md:grid-cols-2 gap-10">
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Studio Structure</h3>
+            <p className="text-slate-400 text-sm mb-2">Legal Entity: DramaX LLC, incorporated in Wyoming, USA.</p>
+            <p className="text-slate-400 text-sm mb-2">Operations: Culiacán, Sinaloa, Mexico.</p>
+            <p className="text-slate-400 text-sm">
+              Focus: Microdrama production for Spanish-language vertical markets. Romance, thriller, drama, true crime.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold mb-3">Team</h3>
+            <p className="text-slate-400 text-sm mb-2">Luis Javier Salido — Executive Producer, Creative Direction</p>
+            <p className="text-slate-400 text-sm mb-2">Showrunner/Writer — Series development, script quality</p>
+            <p className="text-slate-400 text-sm mb-2">Pipeline Operator — AI production, video/audio synthesis</p>
+            <p className="text-slate-400 text-sm">
+              Lean, distributed team. Fast iteration. Platform-first distribution.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Contact */}
       <section id="contact" className="max-w-xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold mb-6">Contact</h2>
+        <h2 className="text-3xl font-bold mb-2">License Content</h2>
+        <p className="text-slate-400 mb-6">
+          Interested in licensing series for your platform? Reach out.
+        </p>
         <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
-          <input name="email" type="email" required placeholder="tu@email.com"
+          <input name="name" type="text" required placeholder="Name"
             className="px-4 py-3 rounded-lg bg-slate-800 border border-slate-700" />
-          <textarea name="message" required placeholder="Mensaje"
+          <input name="company" type="text" placeholder="Company"
+            className="px-4 py-3 rounded-lg bg-slate-800 border border-slate-700" />
+          <input name="email" type="email" required placeholder="Email"
+            className="px-4 py-3 rounded-lg bg-slate-800 border border-slate-700" />
+          <textarea name="message" required placeholder="Message"
             className="px-4 py-3 rounded-lg bg-slate-800 border border-slate-700" />
           <button type="submit" className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold">
-            Enviar
+            Send Message
           </button>
           {formStatus && <p className="text-slate-300">{formStatus}</p>}
         </form>
+        <div className="mt-6 text-slate-400 text-sm">
+          <p className="flex items-center gap-2">
+            <Mail className="w-4 h-4" />
+            <a href="mailto:ops@dramaxstudios.com" className="hover:text-blue-400">ops@dramaxstudios.com</a>
+          </p>
+          <p className="mt-2">Based in Tucson, AZ, USA · Registered in Wyoming, USA</p>
+        </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-800 py-8 px-6 text-center text-slate-500 text-sm">
+        <p>© 2026 DramaX LLC. AI-generated content disclosed. All rights reserved.</p>
+        <p className="mt-2 flex gap-3 justify-center">
+          <a href="#" className="hover:text-blue-400">Privacy Policy</a>
+          <span>·</span>
+          <a href="#" className="hover:text-blue-400">Terms of Service</a>
+          <span>·</span>
+          <a href="#" className="hover:text-blue-400">AI Disclosure</a>
+        </p>
+      </footer>
     </main>
   );
 }
